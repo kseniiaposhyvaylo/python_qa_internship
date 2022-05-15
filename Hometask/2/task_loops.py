@@ -1,5 +1,6 @@
 # 1. Fill the missing pieces
 # Fill the ____ parts in the code below.
+from typing import List
 
 words = ['PYTHON', 'JOHN', 'chEEse', 'hAm', 'DOE', '123']
 upper_case_words = []
@@ -27,10 +28,14 @@ assert sum_of_values == 100
 numbers = [1, 3, 4, 6, 81, 80, 100, 95]
 # Your implementation
 my_list = []
-def fun(n):
-  if n % 5:
-    return 'odd' if n & 1 else 'even'
-  else:
-    return 'five odd' if n & 1 else 'five even'
-  my_list= list(map(fun, numbers))
+for n in numbers:
+    if n % 5 == 0 and n % 2 == 1:
+        my_list.append("five odd")
+    elif n % 5 == 0 and n % 2 == 0:
+        my_list.append("five even")
+    elif n % 2 == 0:
+        my_list.append("even")
+    else:
+        my_list.append("odd")
+print(my_list)
 assert my_list == ['odd', 'odd', 'even', 'even', 'odd', 'five even', 'five even', 'five odd']
